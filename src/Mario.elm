@@ -98,7 +98,14 @@ update computer mario =
     newY = max 0 (mario.y + dt * vy)
   in
     { mario
-      | x = newX
+    -- Continue work here!!
+      | x = 
+        if newX <= computer.screen.width/2 then
+          newX
+        else if newX >= computer.screen.width/2 then
+          newX
+        else
+          mario.x
       , y = newY
       , vx = vx
       , vy = (newY - mario.y) / dt
