@@ -15,13 +15,10 @@ initialStateWithTimeTravel rawGame =
     }
     
 updateWithTimeTravel rawGame computer model =
-
--- I am stuck on how to change paused to true/false since you can't reassign variables
-
     if keyPressed "T" computer then
-        model.paused = True
+        not model.paused
     else if keyPressed "R" computer then
-        model.paused = False
+        model.paused
     else if model.paused then
         model 
     else 
